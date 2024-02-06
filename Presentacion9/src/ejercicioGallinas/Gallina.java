@@ -1,4 +1,4 @@
-package boletinGallina;
+package ejercicioGallinas;
 
 public class Gallina {
 
@@ -27,6 +27,23 @@ public class Gallina {
 		} else
 			this.peso = peso;
 	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public double getPeso() {
+		return peso;
+	}
+
+	public int getcontadorHuevos() {
+		return contadorHuevos;
+	}
+
 
 	public void comer(double cantidad) {
 		if (verificarPeso(cantidad) == true) {
@@ -43,14 +60,6 @@ public class Gallina {
 		this.peso -= PERDIDA_POR_HUEVO;
 		System.out.println(VERDE
 				+ "%s ha puesto un huevo, ahora su peso es de %.2f kg.".formatted(this.nombre, this.peso) + RESET);
-	}
-
-	public int totalHuevos() {
-		int totalHuevos = 0;
-		totalHuevos += contadorHuevos;
-		
-		return totalHuevos;
-
 	}
 
 	public boolean esPosiblePonerHuevo() {
@@ -77,7 +86,7 @@ public class Gallina {
 
 	}
 
-	private boolean verificarPeso(double cantidad) {
+	public boolean verificarPeso(double cantidad) {
 		final double PESO_MAXIMO = 3000;
 		boolean pesoCorrecto;
 
@@ -104,11 +113,12 @@ public class Gallina {
 		if (verificarNumGallinas(numGallinas, maxGallinasEnGranja)
 				&& (numGallinas + gallinasNuevas) <= maxGallinasEnGranja) {
 			numGallinas += gallinasNuevas;
-			System.out.println("Se han añadido %d gallinas nuevas.".formatted(gallinasNuevas));
+			System.out.println("Se han añadido %d animales nuevos.".formatted(gallinasNuevas));
 		} else {
-			System.out.println("No es posible añadir más gallinas.");
+			System.out.println("No es posible añadir más animales.");
 		}
 		return numGallinas;
 	}
 
+	
 }
